@@ -6,9 +6,13 @@ public class TicketTimeComparator implements Comparator<Ticket> {
 
     @Override
     public int compare(Ticket t1, Ticket t2) {
-        if (t1.getTimeTo() - t1.getTimeFrom() < t2.getTimeTo() - t2.getTimeFrom()) {
+
+        int ticketTime1 = t1.getTimeTo() - t1.getTimeFrom();
+        int ticketTime2 = t2.getTimeTo() - t2.getTimeFrom();
+
+        if (ticketTime1 < ticketTime2) {
             return -1;
-        } else if (t1.getTimeTo() - t1.getTimeFrom() > t2.getTimeTo() - t2.getTimeFrom()) {
+        } else if (ticketTime1 > ticketTime2) {
             return 1;
         } else {
             return 0;
